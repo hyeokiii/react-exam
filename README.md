@@ -1,3 +1,3 @@
-# React-SNS
+# React-Exam
 
-React로 SNS 만들기
+React 연습
