@@ -1,10 +1,28 @@
+import { Outlet, Route, Routes } from "react-router";
 import "./App.css";
+import SignInPage from "./pages/sign-in-page";
+import SignUpPage from "./pages/sign-up-page";
+import IndexPage from "./pages/index-page";
+import CounterPage from "./pages/counter-page";
+function AuthLayout() {
+  return (
+    <div>
+      Auth!!!
+      <Outlet />
+    </div>
+  );
+}
 
 function App() {
   return (
-    <>
-      <h1 className="text-3xl font-bold underline">Hello World</h1>
-    </>
+    <Routes>
+      <Route path="/" element={<IndexPage />} />
+      <Route path="/counter" element={<CounterPage />} />
+      <Route element={<AuthLayout />}>
+        <Route path="/sign-in" element={<SignInPage />} />
+        <Route path="/sign-up" element={<SignUpPage />} />
+      </Route>
+    </Routes>
   );
 }
 
