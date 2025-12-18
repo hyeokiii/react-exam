@@ -1,5 +1,6 @@
 import { useDeleteTodo } from "@/store/todo";
 import { Button } from "../ui/button";
+import { Link } from "react-router";
 
 export default function TodoItem({
   id,
@@ -11,7 +12,7 @@ export default function TodoItem({
   const deleteTodo = useDeleteTodo();
   return (
     <div className="flex items-center justify-between border p-2">
-      {content}
+      <Link to={`/todolist/${id}`}>{content}</Link>
       <Button variant="destructive" onClick={() => deleteTodo(id)}>
         삭제
       </Button>
